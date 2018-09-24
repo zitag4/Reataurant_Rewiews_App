@@ -382,3 +382,95 @@ nav h1 a {
 		padding-left: 0;
 	}
 }
+
+/* === Small max 360 Ex: BlackBerry z30 ===*/
+@media screen and (min-width: 321px) and (max-width: 360px) {
+	nav {
+		height: 70px;
+		font-size: 14px;
+	}
+	.inside {
+		display: flex;
+		flex-direction: row;
+	}
+	.filter-options {
+		height: auto;
+		justify-content: flex-end;
+	}
+	#map {
+		height: 455px;
+	}
+	#restaurants-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#restaurants-list li * {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#restaurants-list li a {
+		width: 80%;
+	}
+	#footer {
+		font-size: 12px;
+	}
+	.inside header {
+		width: 100vw;
+	}
+	.inside #breadcrumb {
+		width: 100vw;
+		height: 20px;
+		padding-left: 0;
+		padding-right: 0;
+		order: 0;
+		text-align: center;
+		font-size: 18px;
+	}
+	.inside #breadcrumb li * {
+		font-size: 18px;
+	}
+	.inside #breadcrumb:nth-child(2) {
+		font-size: 12px;
+	}
+	.inside .leaflet-top {
+		padding-top: 30px;
+	}
+	.inside #map-container {
+		order: 1;
+		position: relative;
+		width: 100vw;
+		height: 380px;
+	}
+	.inside #restaurant-container, #reviews-container {
+		padding-right: 0;
+		padding-left: 0;
+		order: 2;
+		width: 100vw;
+		align-items: center;
+	}
+	.inside #reviews-list {
+		margin-left: 10px;
+		width: 100%;
+	}
+	.inside #restaurant-name {
+		text-align: center;
+		margin-top: 0;
+	}
+	.inside #restaurant-hours {
+		width: 90%;
+	}
+	.inside #reviews-container h2 {
+		text-align: center;
+	}
+	.inside #footer {
+		order: 3;
+		width: 100vw;
+		padding-right: 0;
+		padding-left: 0;
+		font-size: 12px;
+	}
+}
