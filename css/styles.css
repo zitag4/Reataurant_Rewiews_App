@@ -394,8 +394,11 @@ nav h1 a {
 		flex-direction: row;
 	}
 	.filter-options {
+		display: flex;
+		flex-direction: column;
 		height: auto;
-		justify-content: flex-end;
+		justify-content: center;
+		padding: 10px 0 5px 0;
 	}
 	#map {
 		height: 455px;
