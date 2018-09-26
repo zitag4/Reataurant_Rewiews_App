@@ -251,7 +251,7 @@ nav h1 a {
 	flex-direction: column;
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+	padding: 140px 40px 30px;
   width: 50%;
 }
 #reviews-container {
@@ -383,7 +383,7 @@ nav h1 a {
 	}
 }
 
-/* === Small max 360 Ex: BlackBerry z30 ===*/
+/* === Small max 573 Ex: BlackBerry z30 ===*/
 @media screen and (min-width: 321px) and (max-width: 573px) {
 	nav {
 		height: 70px;
@@ -433,7 +433,7 @@ nav h1 a {
 		text-align: center;
 		font-size: 18px;
 	}
-	.inside #breadcrumb li * {
+	.inside #breadcrumb * {
 		font-size: 22px;
 	}
 	.inside #breadcrumb:nth-child(2) {
@@ -478,21 +478,58 @@ nav h1 a {
 }
 
 /* === Medium max 420 Ex: Nexus 6P ===*/
-/*@media screen and (min-width: 574px) and (max-width: 480px) {
-	nav {
-		height: 70px;
-		font-size: 14px;
-	}
-	.inside {
-		display: flex;
-		flex-direction: row;
+@media screen and (min-width: 574px) and (max-width: 780px) {
+	nav h1 a {
+		font-size: 28px;
 	}
 	.filter-options {
 		height: auto;
-		justify-content: flex-end;
+		padding-top: 10px;
 	}
-	.filter-options h2 {
-		padding-right: 40px;}
+	#restaurants-list li * {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#restaurants-list li a {
+		width: 80%;
+	}
+	#footer {
+		font-size: 16px;
+	}
+	.inside #breadcrumb li{
+		justify-content: center;
+		font-size: 22px;
+	}
+	.inside #restaurant-container, #reviews-container {
+		padding-left: 10px;
+		width: 50vw;
+		justify-content: center;
+	}
+	.inside #reviews-list {
+		width: 90%;
+	}
+	.inside #reviews-list li p:nth-child(odd) {
+		font-size: 22px;
+	}
+	.inside #reviews-list li p:nth-child(even) {
+		font-size: 18px;
+	}
+	.inside #restaurant-name {
+		text-align: center;
+		padding: 30px 35px 0 0;
+	}
+	.inside #restaurant-hours {
+		width: 90%;
+	}
+	.inside #reviews-container h2 {
+		text-align: center;
+		padding-right: 35px;
+	}
+	.inside #footer {
+		width: 50vw;
+		padding-right: 0;
+		padding-left: 0;
+		font-size: 12px;
 	}
 }
-*/
