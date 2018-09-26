@@ -384,7 +384,7 @@ nav h1 a {
 }
 
 /* === Small max 360 Ex: BlackBerry z30 ===*/
-@media screen and (min-width: 321px) and (max-width: 360px) {
+@media screen and (min-width: 321px) and (max-width: 573px) {
 	nav {
 		height: 70px;
 		font-size: 14px;
@@ -434,7 +434,7 @@ nav h1 a {
 		font-size: 18px;
 	}
 	.inside #breadcrumb li * {
-		font-size: 18px;
+		font-size: 22px;
 	}
 	.inside #breadcrumb:nth-child(2) {
 		font-size: 12px;
@@ -456,12 +456,11 @@ nav h1 a {
 		align-items: center;
 	}
 	.inside #reviews-list {
-		margin-left: 10px;
-		width: 100%;
+		width: 90%;
 	}
 	.inside #restaurant-name {
-		text-align: center;
 		margin-top: 0;
+		text-align: center;
 	}
 	.inside #restaurant-hours {
 		width: 90%;
@@ -477,3 +476,23 @@ nav h1 a {
 		font-size: 12px;
 	}
 }
+
+/* === Medium max 420 Ex: Nexus 6P ===*/
+/*@media screen and (min-width: 574px) and (max-width: 480px) {
+	nav {
+		height: 70px;
+		font-size: 14px;
+	}
+	.inside {
+		display: flex;
+		flex-direction: row;
+	}
+	.filter-options {
+		height: auto;
+		justify-content: flex-end;
+	}
+	.filter-options h2 {
+		padding-right: 40px;}
+	}
+}
+*/
