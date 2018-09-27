@@ -533,3 +533,74 @@ nav h1 a {
 		font-size: 12px;
 	}
 }
+
+/* === Medium to large Ex: iPad Pro ===*/
+@media screen and (min-width: 781px) {
+	nav h1 a {
+		font-size: 28px;
+	}
+	.filter-options {
+		justify-content: center;
+		padding-top: 10px;
+	}
+	.filter-options h2 {
+		font-size: 22px;
+	}
+	.filter-options select {
+		font-size: 19px;
+	}
+	#restaurants-list li {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#restaurants-list li a {
+		width: 80%;
+		font-size: 18px;
+	}
+	#restaurants-list li p {
+		font-size: 18px;
+	}
+	#restaurants-list li h1 {
+		font-size: 22px;
+	}
+	#footer {
+		font-size: 16px;
+	}
+
+	.inside #breadcrumb li{
+		justify-content: center;
+		font-size: 22px;
+	}
+	.inside #restaurant-container, #reviews-container {
+		padding-left: 10px;
+		width: 50vw;
+		justify-content: center;
+	}
+	.inside #reviews-list {
+		width: 90%;
+	}
+	.inside #reviews-list li p:nth-child(odd) {
+		font-size: 22px;
+	}
+	.inside #reviews-list li p:nth-child(even) {
+		font-size: 18px;
+	}
+	.inside #restaurant-name {
+		text-align: center;
+		padding: 30px 35px 0 0;
+	}
+	.inside #restaurant-hours {
+		width: 90%;
+	}
+	.inside #reviews-container h2 {
+		text-align: center;
+		padding-right: 35px;
+	}
+	.inside #footer {
+		width: 50vw;
+		padding-right: 0;
+		padding-left: 0;
+		font-size: 12px;
+	}
+}
