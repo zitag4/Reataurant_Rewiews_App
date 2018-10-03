@@ -604,3 +604,44 @@ nav h1 a {
 		font-size: 12px;
 	}
 }
+
+/* === large Ex: Desktop ===*/
+@media screen and (min-width: 1486px) {
+	.inside nav {
+		width: 1486px;
+		margin: 0 auto;
+		position: absolute;
+		float: left;
+	}
+	body {
+		max-width: 1486px;
+		margin: 0 auto;
+		float: none;
+	}
+	.inside {
+		max-width: 1486px;
+		margin: 0 auto;
+		float: none;
+	}
+	.inside #breadcrumb {
+		padding: 100px 0 30px 0;
+		height: 20px;
+		text-align: center;
+	}
+	.inside #breadcrumb li {
+		font-size: 24px;
+	}
+	.inside #restaurant-container, #reviews-container {
+		width: 50%;
+	}
+	.inside #map-container {
+		float: none;
+		margin: 0 auto;
+		position: absolute;
+	}
+	.inside #footer {
+		width: 50%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
