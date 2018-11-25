@@ -219,8 +219,9 @@ nav h1 a {
   bottom: 0;
   position: absolute;
   width: 50%;
-	padding-right: 0;
-	padding-left: 0;
+	padding: 25px 0;
+
+
 }
 #restaurant-name {
   color: #f54900;
@@ -260,9 +261,7 @@ nav h1 a {
 	padding: 140px 40px 30px;
   width: 50%;
 }
-#reviews-container {
-  padding: 30px 40px 80px;
-}
+
 #reviews-container h2 {
   color: #f54900;
   font-size: 24pt;
@@ -426,9 +425,11 @@ nav h1 a {
 		font-size: 22px;
 	}
 	.inside #restaurant-container, #reviews-container {
-		padding-left: 10px;
 		width: 50vw;
 		justify-content: center;
+	}
+	.inside #reviews-container {
+		padding: 35px 40px 50px;
 	}
 	.inside #reviews-list {
 		width: 90%;
