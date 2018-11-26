@@ -1,3 +1,9 @@
+navigator.serviceWorker.register('/sw.js').then( () => {
+   console.log('Registration succeed');
+ }).catch( () => {
+   console.log('Registration failed');
+ })
+
 let restaurant;
 var newMap;
 
