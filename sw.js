@@ -37,9 +37,24 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
+    fetch(event.request).then( (response) => {
+      if (response.status == 404) {
+        return new Response ('Page not found!');
+      }
+      return response;
+    }).catch( () => {return new Response('Failed!')})
+  )
+});
+/*self.addEventListener('fetch', (event) => {
+  console.log("x"+event.request);
+  event.respondWith(
     caches.match(event.request).then( (response) => {
       if (response) return response;
       return fetch(event.request);
-    })
+    }).catch ( () => {return new Response('Failed!')})
   );
-});
+});*/
+
+//self.addEventListener('activate', (event) ={
+
+//});
