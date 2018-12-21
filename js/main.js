@@ -1,12 +1,12 @@
 // Registering Service Worker
-//if (!navigator.serviceWorker) return;
 
-navigator.serviceWorker.register('/sw.js').then( () => {
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js').then( () => {
    console.log('Registration succeed');
- }).catch( () => {
+    }).catch( () => {
    console.log('Registration failed');
  })
-
+}
 let restaurants,
   neighborhoods,
   cuisines
@@ -200,6 +200,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+
     marker.on("click", onClick);
     function onClick() {
       window.location.href = marker.options.url;

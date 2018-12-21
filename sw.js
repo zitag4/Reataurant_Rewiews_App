@@ -21,9 +21,10 @@ self.addEventListener('install', (event) => {
         'img/7.jpg',
         'img/8.jpg',
         'img/9.jpg',
-        'img/10.jpg',
-        'restaurant.html?id=1',
-        'restaurant.html?id=2',
+        'img/10.jpg'
+  /*
+      'restaurant.html?id=1'
+       'restaurant.html?id=2',
         'restaurant.html?id=3',
         'restaurant.html?id=4',
         'restaurant.html?id=5',
@@ -31,11 +32,23 @@ self.addEventListener('install', (event) => {
         'restaurant.html?id=7',
         'restaurant.html?id=8',
         'restaurant.html?id=9',
-        'restaurant.html?id=10'
+        'restaurant.html?id=10' */
       ]);
     })
   );
 });
+
+/*self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    fetch(event.request).then( (response) => {
+      if (response.status == 404) {
+        return new Response ('Page not found!');
+      }
+      return response;
+    }).catch( () => {return new Response('Failed!')})
+  )
+});*/
+
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -44,7 +57,7 @@ self.addEventListener('activate', (event) => {
         cacheNames.filter( (cacheName) => {
           return cacheName.startsWith('restaurant-') &&
                  (cacheName != staticCacheName);
-                 console.log("itt "+cacheName);
+              //   console.log("itt "+cacheName);
         }).map( (cacheName) => {
         //  console.log("itt "+cacheName);
           return cache.delete(cacheName);
@@ -54,17 +67,23 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  console.log("x"+event.request);
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then( (response) => {
-      if (response) return response;
-      return fetch(event.request);
-    }).then( (response) => {
-      if (response.status == 404) {
-        return new Response ('Page not found!');
-      }
-      return response;
-    }).catch ( () => {return new Response('Failed!')})
+   caches.open(staticCacheName).then( (cache) => {
+      return cache.match(event.request).then( (response) => {
+        if (response)
+          return response;
+        else {
+          return fetch(event.request).then( (response) => {
+            if (response.status > 399)
+              return new Response('Failed!' + response.status);
+            else {
+              cache.put(event.request, response.clone());
+              return response;
+            }
+          }).catch((error) => { return new Response('Failed!');});
+        }
+      });
+    })
   );
 });
