@@ -1,6 +1,8 @@
+const staticCacheName = 'restaurant-review-cache-v2';
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('restaurant-review-cache').then( (cache) => {
+    caches.open(staticCacheName).then( (cache) => {
       return cache.addAll([
         '/',
         'index.html',
@@ -35,26 +37,34 @@ self.addEventListener('install', (event) => {
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    fetch(event.request).then( (response) => {
-      if (response.status == 404) {
-        return new Response ('Page not found!');
-      }
-      return response;
-    }).catch( () => {return new Response('Failed!')})
-  )
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then( (cacheNames) => {
+      return Promise.all(
+        cacheNames.filter( (cacheName) => {
+          return cacheName.startsWith('restaurant-') &&
+                 (cacheName != staticCacheName);
+                 console.log("itt "+cacheName);
+        }).map( (cacheName) => {
+        //  console.log("itt "+cacheName);
+          return cache.delete(cacheName);
+        })
+      );
+    })
+  );
 });
-/*self.addEventListener('fetch', (event) => {
+
+self.addEventListener('fetch', (event) => {
   console.log("x"+event.request);
   event.respondWith(
     caches.match(event.request).then( (response) => {
       if (response) return response;
       return fetch(event.request);
+    }).then( (response) => {
+      if (response.status == 404) {
+        return new Response ('Page not found!');
+      }
+      return response;
     }).catch ( () => {return new Response('Failed!')})
   );
-});*/
-
-//self.addEventListener('activate', (event) ={
-
-//});
+});
